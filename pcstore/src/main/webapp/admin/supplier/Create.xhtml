@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSupplierTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateSupplierLabel_supplierId}" for="supplierId" />
+                    <h:inputText id="supplierId" value="#{supplierController.selected.supplierId}" title="#{bundle.CreateSupplierTitle_supplierId}" required="true" requiredMessage="#{bundle.CreateSupplierRequiredMessage_supplierId}"/>
+                    <h:outputLabel value="#{bundle.CreateSupplierLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{supplierController.selected.name}" title="#{bundle.CreateSupplierTitle_name}" />
+                    <h:outputLabel value="#{bundle.CreateSupplierLabel_contactNo}" for="contactNo" />
+                    <h:inputText id="contactNo" value="#{supplierController.selected.contactNo}" title="#{bundle.CreateSupplierTitle_contactNo}" />
+                    <h:outputLabel value="#{bundle.CreateSupplierLabel_entryDate}" for="entryDate" />
+                    <h:inputText id="entryDate" value="#{supplierController.selected.entryDate}" title="#{bundle.CreateSupplierTitle_entryDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateSupplierLabel_address}" for="address" />
+                    <h:inputText id="address" value="#{supplierController.selected.address}" title="#{bundle.CreateSupplierTitle_address}" />
+                    <h:outputLabel value="#{bundle.CreateSupplierLabel_productId}" for="productId" />
+                    <h:selectOneMenu id="productId" value="#{supplierController.selected.productId}" title="#{bundle.CreateSupplierTitle_productId}" >
+                        <f:selectItems value="#{productController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{supplierController.create}" value="#{bundle.CreateSupplierSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{supplierController.prepareList}" value="#{bundle.CreateSupplierShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateSupplierIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

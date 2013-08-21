@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="content">
+                <!-- Begin Content -->
+                <div id="content">
+                    <!-- Begin Post -->
+                    <div class="post">
+                        <h2>Login<span class="title-bottom">&nbsp;</span></h2>
+                        <p>
+                            <h:form prependId="false">
+                                <h:panelGrid columns="3">
+                                    <h:outputText value="Email"/>
+                                    <h:inputText id="email" value="#{loginController.email}" rendered="true" requiredMessage="Email is required."/>
+                                    <h:message for="email"/>
+                                    <h:outputText value="Password"/>
+                                    <h:inputSecret id="password" value="#{loginController.password}" required="true" requiredMessage="Password is required."/>
+                                    <h:message for="password"/>
+                                    <h:commandButton action="#{loginController.login}" value="Login"/>
+                                </h:panelGrid>
+                            </h:form>     
+                        </p>
+                    </div>
+                    <!-- End Post -->
+                </div>
+                <!-- End Content -->
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

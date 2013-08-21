@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Admin Template</title>
+        <link href="./resources/css/default.css" rel="stylesheet" type="text/css" />        
+    </h:head>
+
+    <h:body>
+       <div id="wrapper">
+            <!-- Begin Search -->
+            <div id="search">
+                <div class="shell">
+                    <form action="#" method="get" accept-charset="utf-8">
+                        <div class="container">
+                            <input type="text" value="Keywords..." title="Keywords..." class="blink" />
+                        </div>
+                        <input class="search-button" type="submit" value="Submit" />
+                    </form>
+                    <div class="cl">&nbsp;</div>
+                </div>
+            </div>
+            <!-- End Search -->
+            <!-- Begin Header -->
+            <div id="header" class="shell">
+                <h1 id="logo"><a class="notext" href="#" title="PC Store">PC Store</a></h1>
+            </div>
+        <div>
+            <div id="left">
+                <ui:insert name="left">Left</ui:insert>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </div>
+        <div id="bottom">
+            <ui:insert name="bottom">Bottom</ui:insert>
+        </div>
+       </div>
+    </h:body>
+
+</html>

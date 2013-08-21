@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+            <ui:define name="content">
+                <!-- Begin Content -->
+                <div id="content">
+                    <!-- Begin Post -->
+                    <div class="post">
+                        <h2>Welcome to PCStore<span class="title-bottom">&nbsp;</span></h2>
+                        <p>Maecenas eget purus arcu, in vestibulum libero. Aliquam facilisis rhoncus eros, quis rutrum dolor tincid-unt ac. Duis vel consequat justo. Praesent felis mauris, ultricies nec tincidunt vitae, dignissim ac risus. Suspendisse in sem sit amet quam adipiscing interdum. Cras ac lacinia enim. Fusce eros odio, lacinia id egestas id, adipiscing a erat. Integer lacinia augue quis eros condimentum ac varius nunc lacinia. </p>
+                    </div>
+                    <!-- End Post -->
+                    <ui:include src="/components/latest_products.xhtml"/>
+                </div>
+                <!-- End Content -->
+            </ui:define>
+
+        </ui:composition>
+    </body>
+
+
+
+</html>
